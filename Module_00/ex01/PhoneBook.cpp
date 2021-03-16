@@ -95,13 +95,18 @@ void PhoneBook::searchContact() const {
 			return;
 		}
 	}
-	int num = std::stoi(num_s);
-	if (_countContacts > 0 && (num > 0 && num <= _countContacts))
-		printContact(getContact(num));
-	else
+	if (num_s.length() > 2)
+	{
 		std::cout << "index is out of range!" << std::endl;
-
-
+	}
+	else
+	{
+		int num = std::stoi(num_s);
+		if (_countContacts > 0 && (num > 0 && num <= _countContacts))
+			printContact(getContact(num));
+		else
+			std::cout << "index is out of range!" << std::endl;
+	}
 }
 
 void PhoneBook::printLine(const std::string &string) {
