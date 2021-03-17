@@ -5,13 +5,17 @@
 #include "Human.hpp"
 
 Human::Human() {
-	_brain = new Brain();
+
 }
 
 std::string Human::identify() const {
-	return _brain->identify();
+	return _brain.identify();
 }
 
-const Brain *Human::getBrain() const {
+const Brain &Human::getBrain() const {
 	return _brain;
+}
+
+Human::~Human() {
+	std::cout << "Human is Destroyed!" << std::endl;
 }

@@ -13,3 +13,19 @@ std::string Brain::identify() const {
 	stringstream >> s;
 	return s;
 }
+
+Brain::~Brain() {
+	std::cout << this->identify() << std::endl;
+	std::cout << "Brain is destroyed!" << std::endl;
+}
+
+Brain::Brain() {
+}
+
+void Brain::setNumberOfNeurons(int numberOfNeurons) {
+	_numberOfNeurons = numberOfNeurons;
+}
+
+int Brain::getNumberOfNeurons() const {
+	return _numberOfNeurons;
+}

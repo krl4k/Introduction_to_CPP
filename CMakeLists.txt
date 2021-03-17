@@ -47,6 +47,7 @@ file(GLOB SOURCE_FILES_EX03 "Module_01/ex03/*.cpp")
 file(GLOB SOURCE_FILES_EX04 "Module_01/ex04/*.cpp")
 file(GLOB SOURCE_FILES_EX05 "Module_01/ex05/*.cpp")
 file(GLOB SOURCE_FILES_EX06 "Module_01/ex06/*.cpp")
+file(GLOB SOURCE_FILES_EX07 "Module_01/ex07/*.cpp")
 
 include_directories(
         Module_01/
@@ -54,7 +55,8 @@ include_directories(
 #        Module_01/ex03/
 #        Module_01/ex04/
 #        Module_01/ex05/
-        Module_01/ex06/
+#        Module_01/ex06/
+        Module_01/ex07/
 )
 
 link_directories(
@@ -63,7 +65,8 @@ link_directories(
 #        Module_01/ex03/
 #        Module_01/ex04/
 #        Module_01/ex05/
-        Module_01/ex06/
+#        Module_01/ex06/
+        Module_01/ex07/
 )
 
 add_executable(module01_ex02
@@ -83,6 +86,10 @@ add_executable(module01_ex05
 
 add_executable(module01_ex06
         ${SOURCE_FILES_EX06}
+        )
+
+add_executable(module01_ex07
+        ${SOURCE_FILES_EX07}
         )
 
 

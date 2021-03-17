@@ -8,12 +8,12 @@
 
 class Human {
 private:
-	const Brain *_brain;
+	const Brain _brain;
 public:
 	Human();
 	std::string identify() const;
-
-	const Brain *getBrain() const;
+	const Brain &getBrain() const;
+	virtual ~Human();
 };
 
 

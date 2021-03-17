@@ -1,6 +1,3 @@
-//
-// Created by Foster Grisella on 3/16/21.
-//
 
 #include "HumanA.hpp"
 
@@ -12,5 +9,9 @@ void HumanA::attack() {
 
 void HumanA::setWeapon(Weapon &weapon) {
 	_weapon = weapon;
+}
+
+HumanA::~HumanA() {
+	std::cout << "HumanA is Destroyed!" << std::endl;
 }
 

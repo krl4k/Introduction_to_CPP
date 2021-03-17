@@ -17,6 +17,8 @@ public:
 	const std::string &getType() const;
 	void setType(const std::string &type);
 
+	virtual ~Weapon();
+
 public:
 };
 

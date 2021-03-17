@@ -5,53 +5,62 @@ int PhoneBook::getCountContacts() const {
 	return _countContacts;
 }
 
+const std::string getField(const std::string &field)
+{
+	std::string string;
+
+	while (1)
+	{
+		std::cout << "Enter a " << field << ": ";
+		std::getline(std::cin, string);
+		if (std::cin.eof())
+		{
+			std::cout << "\nGOODBUY!" << std::endl;
+			exit(0);
+		}
+		if (field == "Birthday Day")
+		{
+			bool bValid = true;
+			for (unsigned int nIndex = 0; nIndex < string.length(); nIndex++)
+				if (!isdigit(string[nIndex]) && string[nIndex] != '.')
+				{
+					bValid = false;
+					break;
+				}
+			if (!bValid)
+				continue;
+		}
+		if (std::cin.fail()) // если никакого извлечения не произошло
+		{
+			std::cin.clear(); // то сбрасываем все текущие флаги состояния и устанавливаем goodbit, чтобы иметь возможность использовать функцию ignore()
+			std::cin.ignore(32767, '\n'); // очищаем поток от мусора
+			continue; // просим пользователя ввести свой возраст еще раз
+		}
+		if (string.empty())
+		{
+			std::cout << "Fail input. Try again!!!" << std::endl;
+			continue;
+		} else
+			break;
+	}
+	return string;
+}
+
 void PhoneBook::addContact()  {
 	std::string temp;
 	if (_countContacts < 8)
 	{
-		std::cout << "Enter a First Name:";
-		std::getline(std::cin, temp);
-		_contact[_countContacts].setFirstName(temp);
-
-		std::cout << "Enter a Last Name:";
-		std::getline(std::cin, temp);
-		_contact[_countContacts].setLastName(temp);
-
-		std::cout << "Enter a Nickname:";
-		std::getline(std::cin, temp);
-		_contact[_countContacts].setNickname(temp);
-
-		std::cout << "Enter a Login:";
-		std::getline(std::cin, temp);
-		_contact[_countContacts].setLogin(temp);
-
-		std::cout << "Enter a Postal Address:";
-		std::getline(std::cin, temp);
-		_contact[_countContacts].setPostalAddress(temp);
-
-		std::cout << "Enter a Email Address:";
-		std::getline(std::cin, temp);
-		_contact[_countContacts].setEmailAddress(temp);
-
-		std::cout << "Enter a Phone Number:";
-		std::getline(std::cin, temp);
-		_contact[_countContacts].setPhoneNumber(temp);
-
-		std::cout << "Enter a Birthday Day:";
-		std::getline(std::cin, temp);
-		_contact[_countContacts].setBirthdayDate(temp);
-
-		std::cout << "Enter a Favorite Meal:";
-		std::getline(std::cin, temp);
-		_contact[_countContacts].setFavoriteMeal(temp);
-
-		std::cout << "Enter a UnderWear Color:";
-		std::getline(std::cin, temp);
-		_contact[_countContacts].setUnderwearColor(temp);
-
-		std::cout << "Enter a Darkest Secret:";
-		std::getline(std::cin, temp);
-		_contact[_countContacts].setDarkestSecret(temp);
+		_contact[_countContacts].setFirstName(getField("First name"));
+		_contact[_countContacts].setLastName(getField("Last name"));
+		_contact[_countContacts].setNickname(getField("Nickname"));
+		_contact[_countContacts].setLogin(getField("Login"));
+		_contact[_countContacts].setPostalAddress(getField("Postal Address"));
+		_contact[_countContacts].setEmailAddress(getField("Email address"));
+		_contact[_countContacts].setPhoneNumber(getField("Phone Number"));
+		_contact[_countContacts].setBirthdayDate(getField("Birthday Day"));
+		_contact[_countContacts].setFavoriteMeal(getField("Favorite meal"));
+		_contact[_countContacts].setUnderwearColor(getField("Underwear Color"));
+		_contact[_countContacts].setDarkestSecret(getField("Darkest Secret"));
 		_countContacts++;
 	}
 	else
@@ -86,8 +95,18 @@ void PhoneBook::searchContact() const {
 	std::cout 	<< "|-------------------------------------------|" << std::endl;
 	std::cout << "Enter a index: ";
 	std::string num_s;
-	std::cin >> num_s;
-	std::cin.ignore(32767, '\n');
+	std::getline(std::cin, num_s);
+//	std::cin.ignore(32767, '\n');
+	if (std::cin.eof())
+	{
+		std::cout << "GOODBUY!" << std::endl;
+		exit(1);
+	}
+	if (num_s.empty())
+	{
+		std::cout << "WRONG INPUT!" << std::endl;
+		return;
+	}
 	for (size_t i = 0; i < num_s.length(); ++i) {
 		if (!std::isdigit(num_s[i]))
 		{
