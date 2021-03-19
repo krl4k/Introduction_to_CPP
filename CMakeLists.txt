@@ -94,3 +94,66 @@ add_executable(module01_ex07
 
 
 #-----------------------------------------------
+
+#---MODULE 02--------------------------------------------
+
+include_directories(
+        Module_02/
+        Module_02/ex01/
+)
+
+link_directories(
+        Module_02/
+#        Module_02/ex00/
+        Module_02/ex01/
+)
+
+file(GLOB SOURCE_FILES_MODULE_02_EX00 "Module_02/ex00/*.cpp")
+file(GLOB SOURCE_FILES_MODULE_02_EX01 "Module_02/ex01/*.cpp")
+
+add_executable(module02_ex01
+#        ${SOURCE_FILES_MODULE_02_EX00}
+        ${SOURCE_FILES_MODULE_02_EX01}
+        )
+
+#-----------------------------------------------
+
+
+#---MODULE 03--------------------------------------------
+
+include_directories(
+#        Module_03/
+#        Module_03/ex00
+#        Module_03/ex01
+        Module_03/ex02
+)
+
+
+link_directories(
+#        Module_03/
+#        Module_03/ex00/
+#        Module_03/ex01/
+        Module_03/ex02/
+)
+
+#file(GLOB SOURCE_FILES_MODULE_03_EX00 "Module_03/ex00/*.cpp")
+#file(GLOB SOURCE_FILES_MODULE_03_EX01 "Module_03/ex01/*.cpp")
+file(GLOB SOURCE_FILES_MODULE_03_EX02 "Module_03/ex02/*.cpp")
+
+#add_executable(module03_ex00
+#        ${SOURCE_FILES_MODULE_03_EX00}
+#        ${SOURCE_FILES_MODULE_03_EX01}
+#        )
+
+
+#add_executable(module03_ex01
+#        ${SOURCE_FILES_MODULE_03_EX01}
+#        )
+
+
+add_executable(module03_ex02
+        ${SOURCE_FILES_MODULE_03_EX02}
+        )
+
+
+#-----------------------------------------------
