@@ -125,7 +125,8 @@ include_directories(
 #        Module_03/
 #        Module_03/ex00
 #        Module_03/ex01
-        Module_03/ex02
+#        Module_03/ex02
+        Module_03/ex03
 )
 
 
@@ -133,12 +134,14 @@ link_directories(
 #        Module_03/
 #        Module_03/ex00/
 #        Module_03/ex01/
-        Module_03/ex02/
+#        Module_03/ex02/
+        Module_03/ex03/
 )
 
 #file(GLOB SOURCE_FILES_MODULE_03_EX00 "Module_03/ex00/*.cpp")
 #file(GLOB SOURCE_FILES_MODULE_03_EX01 "Module_03/ex01/*.cpp")
-file(GLOB SOURCE_FILES_MODULE_03_EX02 "Module_03/ex02/*.cpp")
+#file(GLOB SOURCE_FILES_MODULE_03_EX02 "Module_03/ex02/*.cpp")
+file(GLOB SOURCE_FILES_MODULE_03_EX03 "Module_03/ex03/*.cpp")
 
 #add_executable(module03_ex00
 #        ${SOURCE_FILES_MODULE_03_EX00}
@@ -150,10 +153,14 @@ file(GLOB SOURCE_FILES_MODULE_03_EX02 "Module_03/ex02/*.cpp")
 #        ${SOURCE_FILES_MODULE_03_EX01}
 #        )
 
+#
+#add_executable(module03_ex02
+#        ${SOURCE_FILES_MODULE_03_EX02}
+#        )
 
-add_executable(module03_ex02
-        ${SOURCE_FILES_MODULE_03_EX02}
+
+add_executable(module03_ex03
+        ${SOURCE_FILES_MODULE_03_EX03}
         )
-
 
 #-----------------------------------------------

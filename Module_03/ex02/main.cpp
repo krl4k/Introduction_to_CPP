@@ -16,7 +16,11 @@ int main()
 
 	FragTrap fragTrap1 = fragTrap;
 
+	ScavTrap scavTrap("tahir");
 
+	ClapTrap clapTrap = scavTrap;
+	ClapTrap clapTrap1 = fragTrap;
+	ScavTrap scavTrap1 = scavTrap;
 
 
 //	ClapTrap *clapTrap = new FragTrap("123"); // не будет работать без virtual!
