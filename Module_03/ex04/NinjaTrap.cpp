@@ -40,11 +40,29 @@ void NinjaTrap::ninjaShoebox(const NinjaTrap &ninjaTrap) {
 }
 
 NinjaTrap::NinjaTrap(const NinjaTrap &other) {
-	*this = other;
+	if (this != &other)
+		*this = other;
 }
 
 NinjaTrap &NinjaTrap::operator=(const NinjaTrap &other) {
-	ClapTrap::operator=(other);
+	std::cout << "Assignation operator called" << std::endl;
+	if (this == &other)
+	{
+		return *this;
+	}
+	_name = other._name;
+	_hitPoint = other._hitPoint;
+	_maxHitPoint = other._maxHitPoint;
+	_energyPoint = other._energyPoint;
+	_maxEnergyPoint = other._maxEnergyPoint;
+	_level = other._level;
+	_meleeAttackDamage = other._meleeAttackDamage;
+	_rangedAttackDamage = other._rangedAttackDamage;
+	_armorDamageReduction = other._armorDamageReduction;
 	return *this;
+}
+
+void NinjaTrap::meleeAttack(const std::string &target) {
+	std::cout << "NNJ-TP attack!!!"  << target << " bumbumbumbum" << std::endl;
 }
 

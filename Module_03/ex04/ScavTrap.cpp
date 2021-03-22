@@ -31,7 +31,12 @@ void ScavTrap::challengeNewcomer() const {
 	std::cout 	<< "SCV-TP: " <<  "\"" << _name << "\""  << ": " << screams[rand_scream] << std::endl;
 }
 
-ScavTrap::ScavTrap(const ScavTrap &other)  : ClapTrap(other) {
+ScavTrap::ScavTrap(const ScavTrap &other) {
+	*this = other;
+}
 
+ScavTrap &ScavTrap::operator=(const ScavTrap &other) {
+	ClapTrap::operator=(other);
+	return *this;
 }
 

@@ -5,22 +5,23 @@
 #include "ClapTrap.hpp"
 #include "FragTrap.hpp"
 #include "ScavTrap.hpp"
+
 int main()
 {
 	FragTrap fragTrap("Kirill");
 	fragTrap.meleeAttack("lol");
 	fragTrap.vaulthunter_dot_exe("dsadas");
-
 	fragTrap.takeDamage(10);
 	fragTrap.beRepaired(10000);
 
 	FragTrap fragTrap1 = fragTrap;
+//	ScavTrap scavTrap("tahir");
 
-	ScavTrap scavTrap("tahir");
 
-	ClapTrap clapTrap = scavTrap;
+
+/*	ClapTrap clapTrap = scavTrap;
 	ClapTrap clapTrap1 = fragTrap;
-	ScavTrap scavTrap1 = scavTrap;
+	ScavTrap scavTrap1 = scavTrap;*/
 
 
 //	ClapTrap *clapTrap = new FragTrap("123"); // не будет работать без virtual!

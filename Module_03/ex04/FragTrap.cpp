@@ -49,7 +49,27 @@ void FragTrap::vaulthunter_dot_exe(const std::string &target) {
 	}
 }
 
-FragTrap::FragTrap(const FragTrap &other)  : ClapTrap(other) {
+FragTrap &FragTrap::operator=(const FragTrap &other) {
+	ClapTrap::operator=(other);
+	return *this;
+}
+
+FragTrap::FragTrap(const FragTrap &other) {
+	*this = other;
+}
+
+FragTrap::FragTrap() {
 
 }
+
+void FragTrap::rangedAttack(const std::string &target) {
+	std::cout 	<< "FR4G-TP: " <<  "\"" << _name << "\""  << ": "
+				 << "Ready for the PUNCHline?! "
+				 << "Attacks " << "\"" << target << "\""
+				 << " at melee, causing "
+				 << _meleeAttackDamage
+				 << " points of damage!"
+				 << std::endl;
+}
+
 
