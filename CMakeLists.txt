@@ -71,7 +71,7 @@ link_directories(
 
 add_executable(module01_ex02
         ${SOURCE_FILES_EX02}
-        )
+        Module_04/ex01/AWeapon.cpp Module_04/ex01/AWeapon.hpp Module_04/ex01/PlasmaRifle.cpp Module_04/ex01/PlasmaRifle.hpp Module_04/ex01/PowerFist.cpp Module_04/ex01/PowerFist.hpp Module_04/ex01/Enemy.cpp Module_04/ex01/Enemy.hpp Module_04/ex01/SuperMutant.cpp Module_04/ex01/SuperMutant.hpp Module_04/ex01/SuperMutant.cpp Module_04/ex01/SuperMutant.hpp Module_04/ex01/RadScorpion.cpp Module_04/ex01/RadScorpion.hpp Module_04/ex01/Character.cpp Module_04/ex01/Character.hpp Module_04/ex01/main.cpp)
 
 add_executable(module01_ex03
         ${SOURCE_FILES_EX03}
@@ -176,8 +176,14 @@ link_directories(
 
 #-------------------------------MOdule 04---------------
 
-file(GLOB SOURCE_FILES_MODULE_04_EX00 "Module_04/ex00/*.cpp")
+#file(GLOB SOURCE_FILES_MODULE_04_EX00 "Module_04/ex00/*.cpp")
+file(GLOB SOURCE_FILES_MODULE_04_EX01 "Module_04/ex01/*.cpp")
+#
+#add_executable(module04_ex00
+#        ${SOURCE_FILES_MODULE_04_EX00}
+#        Module_04/ex00/Sorcerer.cpp Module_04/ex00/Sorcerer.hpp Module_04/ex00/Victim.cpp Module_04/ex00/Victim.hpp Module_04/ex00/Peon.cpp Module_04/ex00/Peon.hpp)
 
-add_executable(module04_ex00
-        ${SOURCE_FILES_MODULE_04_EX00}
-        Module_04/ex00/Sorcerer.cpp Module_04/ex00/Sorcerer.hpp Module_04/ex00/Victim.cpp Module_04/ex00/Victim.hpp Module_04/ex00/Peon.cpp Module_04/ex00/Peon.hpp)
+
+add_executable(module04_ex01
+        ${SOURCE_FILES_MODULE_04_EX01}
+        )
