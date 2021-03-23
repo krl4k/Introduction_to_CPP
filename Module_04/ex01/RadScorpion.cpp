@@ -18,4 +18,5 @@ RadScorpion::RadScorpion(const RadScorpion &other) : Enemy(other){
 
 RadScorpion &RadScorpion::operator=(const RadScorpion &other) {
 	Enemy::operator=(other);
+	return *this;
 }

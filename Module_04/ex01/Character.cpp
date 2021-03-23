@@ -41,8 +41,12 @@ void Character::equip(AWeapon *weapon) {
 	_weapon = weapon;
 }
 
-void Character::attack(Enemy *enemy) {
-	if (_weapon && enemy){
+void Character::attack(Enemy *&enemy) {
+
+//	std::cout << "attack " << &enemy << std::endl;  //если передавваить не по указателю адреса будут разные
+	if (!enemy)
+		return;
+	if (_weapon){
 		if (_ap >= _weapon->getAPCost())
 		{
 			std::cout << _name << " attacks " << enemy->getType() << " with " << _weapon->getName() << std::endl;
@@ -53,6 +57,7 @@ void Character::attack(Enemy *enemy) {
 		if (enemy->getHp() == 0)
 		{
 			delete enemy;
+			enemy = nullptr;
 		}
 	}
 

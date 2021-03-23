@@ -43,8 +43,8 @@ const std::string &Sorcerer::getTitle() const {
 	return _title;
 }
 
-void Sorcerer::polymorph(const Victim &) const {
-
+void Sorcerer::polymorph(const Victim &victim) const {
+	victim.getPolymorphed();
 }
 
 std::ostream & operator<<(std::ostream &out, const Sorcerer &sorcerer)

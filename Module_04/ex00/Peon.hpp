@@ -20,7 +20,7 @@ public:
 
 	Peon &operator=(const Peon &other);
 
-	void getPolymorphed() const override;
+	void getPolymorphed() const;
 
 private:
 

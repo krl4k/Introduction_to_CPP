@@ -5,7 +5,9 @@
 
 #include "AWeapon.hpp"
 
-AWeapon::AWeapon(const std::string &name, int apCost, int damage) : _name(name), _APCost(apCost), _Damage(damage) {}
+AWeapon::AWeapon(const std::string &name, int apCost, int damage) : _name(name), _APCost(apCost), _Damage(damage) {
+	std::cout << "weapon constructor" << std::endl;
+}
 
 AWeapon::AWeapon(const AWeapon &other) {
 	*this = other;

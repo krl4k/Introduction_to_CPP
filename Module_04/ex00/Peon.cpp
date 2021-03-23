@@ -21,6 +21,7 @@ Peon::Peon(const Peon &other) : Victim(other) {
 
 Peon &Peon::operator=(const Peon &other) {
 	Victim::operator=(other);
+	return *this;
 }
 
 void Peon::getPolymorphed() const {

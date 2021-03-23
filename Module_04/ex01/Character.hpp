@@ -28,7 +28,7 @@ public:
 
 	void equip(AWeapon* weapon);
 
-	void attack(Enemy* enemy);
+	void attack(Enemy* &enemy);
 
 	const std::string &getName() const;
 

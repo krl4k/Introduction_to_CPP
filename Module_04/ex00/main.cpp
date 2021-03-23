@@ -12,8 +12,12 @@ int main()
 	Victim jim("Jimmy");
 	Peon joe("Joe");
 	std::cout << robert << jim << joe;
+
+	std::cout << "" << std::endl;
 	robert.polymorph(jim);
 	robert.polymorph(joe);
+	std::cout << "" << std::endl;
+
 	return 0;
 }
 

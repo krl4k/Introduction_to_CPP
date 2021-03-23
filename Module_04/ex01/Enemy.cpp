@@ -13,11 +13,12 @@ Enemy::~Enemy() {
 }
 
 Enemy::Enemy() {
-
+	std::cout << "enemy constructor!!!" << std::endl;
 }
 
 Enemy::Enemy(const Enemy &other) {
-
+	_type = other._type;
+	_hp = other._hp;
 }
 
 Enemy &Enemy::operator=(const Enemy &other) {
