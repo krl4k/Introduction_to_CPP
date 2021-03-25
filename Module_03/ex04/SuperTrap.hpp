@@ -5,11 +5,13 @@
 
 #ifndef TEST_SUPERTRAP_HPP
 #define TEST_SUPERTRAP_HPP
+
+#include <ostream>
 #include "FragTrap.hpp"
 #include "NinjaTrap.hpp"
 #include "ClapTrap.hpp"
 
-class SuperTrap: public FragTrap, public NinjaTrap{
+class SuperTrap: public NinjaTrap, public FragTrap{
 public:
 
 	SuperTrap();
@@ -22,6 +24,7 @@ public:
 
 	SuperTrap &operator=(const SuperTrap &other);
 
+	friend std::ostream &operator<<(std::ostream &os, const SuperTrap &trap);
 
 	using FragTrap::rangedAttack;
 	using NinjaTrap::meleeAttack;

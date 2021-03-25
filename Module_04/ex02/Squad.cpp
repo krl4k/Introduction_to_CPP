@@ -68,4 +68,6 @@ Squad::Squad(const Squad &other) {
 	*this = other;
 }
 
-Squad::Squad(int count) : _count(count) {}
+Squad::Squad(int count) : _count(count) {
+	_units = new ISpaceMarine* [_count];
+}

@@ -5,7 +5,7 @@
 
 #include "SuperTrap.hpp"
 
-SuperTrap::SuperTrap(const std::string &name) : FragTrap(name), NinjaTrap(name) {
+SuperTrap::SuperTrap(const std::string &name) : ClapTrap(name), NinjaTrap(name), FragTrap(name) {
 	_hitPoint = FragTrap::_hitPoint;
 	_maxHitPoint = FragTrap::_maxHitPoint;
 	_energyPoint = NinjaTrap::_energyPoint;
@@ -14,7 +14,6 @@ SuperTrap::SuperTrap(const std::string &name) : FragTrap(name), NinjaTrap(name) 
 	_meleeAttackDamage = NinjaTrap::_meleeAttackDamage;
 	_rangedAttackDamage = FragTrap::_rangedAttackDamage;
 	_armorDamageReduction = FragTrap::_armorDamageReduction;
-
 }
 
 SuperTrap::~SuperTrap() {
@@ -36,5 +35,11 @@ SuperTrap &SuperTrap::operator=(const SuperTrap &superTrap) {
 
 SuperTrap::SuperTrap(const SuperTrap &other)  : ClapTrap(other), FragTrap(other), NinjaTrap(other) {
 	*this = other;
+}
+
+std::ostream &operator<<(std::ostream &os, const SuperTrap &trap) {
+	os << "mel= "<<  trap._meleeAttackDamage << "\n";
+	os << "range = " << trap._rangedAttackDamage << "\n";
+	return os;
 }
 

@@ -13,6 +13,8 @@ int main()
 
 	SuperTrap trap(superTrap);
 
+	std::cout << trap << std::endl;
+
 
 //	std::cout << superTrap << std::endl;
 }

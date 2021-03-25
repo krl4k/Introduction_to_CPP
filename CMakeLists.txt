@@ -79,7 +79,7 @@ link_directories(
 
 add_executable(module01_ex04
         ${SOURCE_FILES_EX04}
-        )
+        Module_05/ex00/Bureaucrat.cpp Module_05/ex00/Bureaucrat.hpp Module_05/ex00/main.cpp Module_05/ex01/Form.cpp Module_05/ex01/Form.hpp)
 add_executable(module01_ex05
         ${SOURCE_FILES_EX05}
         )
@@ -144,7 +144,7 @@ link_directories(
 #file(GLOB SOURCE_FILES_MODULE_03_EX01 "Module_03/ex01/*.cpp")
 #file(GLOB SOURCE_FILES_MODULE_03_EX02 "Module_03/ex02/*.cpp")
 #file(GLOB SOURCE_FILES_MODULE_03_EX03 "Module_03/ex03/*.cpp")
-#file(GLOB SOURCE_FILES_MODULE_03_EX04 "Module_03/ex04/*.cpp")
+file(GLOB SOURCE_FILES_MODULE_03_EX04 "Module_03/ex04/*.cpp")
 
 #add_executable(module03_ex00
 #        ${SOURCE_FILES_MODULE_03_EX00}
@@ -167,9 +167,9 @@ link_directories(
 #        )
 
 
-#add_executable(module03_ex04
-#        ${SOURCE_FILES_MODULE_03_EX04}
-#        )
+add_executable(module03_ex04
+        ${SOURCE_FILES_MODULE_03_EX04}
+        )
 
 #-----------------------------------------------
 
@@ -179,7 +179,7 @@ link_directories(
 #file(GLOB SOURCE_FILES_MODULE_04_EX00 "Module_04/ex00/*.cpp")
 #file(GLOB SOURCE_FILES_MODULE_04_EX01 "Module_04/ex01/*.cpp")
 #file(GLOB SOURCE_FILES_MODULE_04_EX02 "Module_04/ex02/*.cpp")
-file(GLOB SOURCE_FILES_MODULE_04_EX02 "Module_04/ex03/*.cpp")
+#file(GLOB SOURCE_FILES_MODULE_04_EX02 "Module_04/ex03/*.cpp")
 #
 #add_executable(module04_ex00
 #        ${SOURCE_FILES_MODULE_04_EX00}
@@ -196,6 +196,35 @@ file(GLOB SOURCE_FILES_MODULE_04_EX02 "Module_04/ex03/*.cpp")
 #)
 
 
-add_executable(module04_ex03
-        ${SOURCE_FILES_MODULE_04_EX02}
-        Module_04/ex03/Ice.cpp Module_04/ex03/Ice.hpp Module_04/ex03/Cure.cpp Module_04/ex03/Cure.hpp Module_04/ex03/MateriaSource.cpp Module_04/ex03/MateriaSource.hpp Module_04/ex03/main.cpp)
+#add_executable(module04_ex03
+#        ${SOURCE_FILES_MODULE_04_EX02}
+#        Module_04/ex03/Ice.cpp Module_04/ex03/Ice.hpp Module_04/ex03/Cure.cpp Module_04/ex03/Cure.hpp Module_04/ex03/MateriaSource.cpp Module_04/ex03/MateriaSource.hpp Module_04/ex03/main.cpp)
+
+#file(GLOB SOURCE_FILES_MODULE_05_EX00 "Module_05/ex00/*.cpp")
+#file(GLOB SOURCE_FILES_MODULE_05_EX01 "Module_05/ex01/*.cpp")
+#file(GLOB SOURCE_FILES_MODULE_05_EX02 "Module_05/ex02/*.cpp")
+#file(GLOB SOURCE_FILES_MODULE_05_EX03 "Module_05/ex03/*.cpp")
+
+#add_executable(module05_ex00
+#        ${SOURCE_FILES_MODULE_05_EX00}
+#        )
+
+
+#add_executable(module05_ex01
+#        ${SOURCE_FILES_MODULE_05_EX01}
+#        Module_05/ex01/main.cpp)
+
+#add_executable(module05_ex02
+#        ${SOURCE_FILES_MODULE_05_EX02}
+#        )
+
+
+#add_executable(module05_ex03
+#        ${SOURCE_FILES_MODULE_05_EX03}
+#        )
+
+file(GLOB SOURCE_FILES_MODULE_06_EX00 "Module_06/ex00/*.cpp")
+
+add_executable(module06_ex00
+        ${SOURCE_FILES_MODULE_06_EX00}
+        )

@@ -15,7 +15,10 @@ void copy_test()
 	ISpaceMarine* kiri2 = new TacticalMarine();
 	vlc1.push(kiri1);
 	vlc1.push(kiri2);
-	Squad vlc3 = (vlc1);
+
+	Squad vlc3;
+	vlc3= vlc1;
+
 
 	ISpaceMarine* kiri3 = new AssaultTerminator();
 	ISpaceMarine* kiri4 = new TacticalMarine();
