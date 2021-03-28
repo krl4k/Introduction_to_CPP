@@ -51,7 +51,7 @@ int main(int argc, char **argv)
 {
 	if (argc == 2)
 	{
-		Cast cast("42.0f");
+		Cast cast(argv[1]);
 		cast.toChar();
 		cast.toInt();
 		cast.toFloat();

@@ -223,8 +223,53 @@ add_executable(module03_ex04
 #        ${SOURCE_FILES_MODULE_05_EX03}
 #        )
 
-file(GLOB SOURCE_FILES_MODULE_06_EX00 "Module_06/ex00/*.cpp")
+#file(GLOB SOURCE_FILES_MODULE_06_EX00 "Module_06/ex00/*.cpp")
+#file(GLOB SOURCE_FILES_MODULE_06_EX01 "Module_06/ex01/*.cpp")
 
-add_executable(module06_ex00
-        ${SOURCE_FILES_MODULE_06_EX00}
+#add_executable(module06_ex01
+#        ${SOURCE_FILES_MODULE_06_EX01}
+#        )
+
+
+#add_executable(module06_ex02
+#        Module_06/ex02/main.cpp
+#        )
+
+
+add_executable(module07_ex00
+        Module_07/ex00/main.cpp
+        )
+
+
+add_executable(module07_ex01
+        Module_07/ex01/main.cpp
+        )
+
+#add_executable(module07_ex02
+#        Module_07/ex02/Array.cpp
+#        Module_07/ex02/main.cpp
+#        )
+
+#add_executable(module07_ex02
+#        Module_07/ex02/main.cpp
+#        Module_07/ex02/Array.cpp
+#        )
+
+
+add_executable(module08_ex00
+        Module_08/ex00/main.cpp
+        Module_08/ex00/easyfind.hpp
+        )
+
+
+add_executable(module08_ex01
+        Module_08/ex01/span.hpp
+        Module_08/ex01/span.cpp
+        Module_08/ex01/main.cpp
+        )
+
+add_executable(module08_ex02
+        Module_08/ex02/MutantStack.cpp
+        Module_08/ex02/MutantStack.hpp
+        Module_08/ex02/main.cpp
         )

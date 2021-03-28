@@ -1,0 +1,23 @@
+NAME = convert
+
+FLAGS = -Wall -Werror -Wextra
+
+SRCS = main.cpp Cast.cpp
+
+OBJS = $(SRCS:.cpp=.o)
+
+all: $(NAME)
+
+$(NAME): $(OBJS) Cast.hpp
+	clang++ $(FLAGS) -o $(NAME) $(OBJS)
+
+.cpp.o:
+	clang++ $(FLAGS) -c $< -o $@
+
+clean:
+	rm -f *.o
+
+fclean: clean
+	rm -f $(NAME)
+
+re: fclean all

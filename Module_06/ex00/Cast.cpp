@@ -15,10 +15,12 @@ Cast::~Cast() {
 }
 
 Cast::Cast(const Cast &other) {
+	*this = other;
 }
 
 Cast &Cast::operator=(const Cast &other) {
 	if (this == &other)
+		return *this;
 	return *this;
 }
 
@@ -83,7 +85,7 @@ void Cast::toDouble() const {
 	else{
 		try {
 			c = std::stod(_string);
-			std::cout <<  std::fixed << std::setprecision(1) << c << std::showpoint;
+			std::cout <<  std::fixed << std::setprecision(1) << c << std::showpoint << std::endl;
 		} catch (std::exception &exception) {
 			std::cout << "impossible" << std::endl;
 		}
