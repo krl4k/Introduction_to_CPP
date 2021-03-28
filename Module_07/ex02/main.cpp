@@ -84,6 +84,8 @@ void strings()
 
 int main()
 {
+
+
 	ints();
 //	doubles();
 //	strings();

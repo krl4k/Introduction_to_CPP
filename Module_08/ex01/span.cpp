@@ -67,7 +67,7 @@ int &span::operator[](const int index) {
 }
 
 void span::addNumber(std::vector<int>::iterator begin, std::vector<int>::iterator end) {
-	if (end - begin <= _size - _array.size())
+	if (static_cast<size_t>(end - begin) <= _size - _array.size())
 		_array.insert(_array.end(), begin, end);
 	else
 	{

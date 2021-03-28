@@ -272,4 +272,5 @@ add_executable(module08_ex02
         Module_08/ex02/MutantStack.cpp
         Module_08/ex02/MutantStack.hpp
         Module_08/ex02/main.cpp
+#        Module_08/ex02/deque_test.cpp
         )

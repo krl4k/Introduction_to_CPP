@@ -8,7 +8,7 @@
 #include <iostream>
 
 template<typename T>
-typename T::iterator &easyfind( T & array, int find){
+typename T::iterator easyfind( T & array, int find){
 	typename T::iterator it;
 	if ((it = std::find(array.begin(), array.end(), find)) == array.end())
 		throw std::runtime_error("not found!");

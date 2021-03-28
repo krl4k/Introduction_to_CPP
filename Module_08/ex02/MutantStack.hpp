@@ -9,9 +9,10 @@
 #include <string>
 #include <iostream>
 #include <stack>
+#include <list>
 
 template<class T>
-class MutantStack : public std::stack<T> {
+class 	MutantStack : public std::stack<T> {
 public:
 	class iterator;
 	typedef typename MutantStack<T>::iterator iterator;
@@ -33,22 +34,28 @@ public:
 		iterator(T *c){
 			curIter = c;
 		}
-		iterator &operator++(int) {
-			return *curIter++;
+		/*
+		* prefix
+		*/
+		iterator operator++() {
+			--curIter;
+			return *this;
 		}
-		iterator &operator++() {
-			iterator temp(curIter);
-//			++curIter;
-			this->operator++();
+		iterator operator--() {
+			++curIter;
+			return *this;
+		}
+/*
+* postfix
+*/
+		iterator &operator++(int) {
+			iterator temp = curIter;
+			--curIter;
 			return temp;
 		}
 		iterator &operator--(int) {
-			return *--curIter;
-		}
-		iterator &operator--() {
-			iterator temp(curIter);
-//			--curIter;
-			this->operator--();
+			iterator temp = curIter;
+			++curIter;
 			return temp;
 		}
 		bool operator!=(const iterator &it) {
@@ -73,7 +80,7 @@ public:
 	}
 	MutantStack<T>::iterator end() {
 		iterator temp = this->begin();
-		for (int i = 0; i < this->size(); ++i) {
+		for (size_t i = 0; i < this->size(); ++i) {
 			++temp;
 		}
 		return temp;

@@ -38,7 +38,7 @@ public:
 
 //	void addNumber(std::iterator)
 private:
-	int _size;
+	size_t _size;
 	std::vector<int> _array;
 	std::vector<int> _sortedArray;
 };

@@ -32,7 +32,7 @@ void test()
 	for (int i = 0; i < 2; ++i) {
 		std::cout << "  ";
 	}
-	for (int i = 0; i < vector.size(); ++i) {
+	for (uint i = 0; i < vector.size(); ++i) {
 		std::cout << vector[i] << " ";
 	}
 	std::cout << "" << std::endl;
@@ -58,8 +58,8 @@ void 	crazy_test(){
 
 	span span(1003);
 	span.addNumber(0);
-	span.addNumber(1);
-	span.addNumber(3);
+//	span.addNumber(1);
+//	span.addNumber(3);
 	try {
 		span.addNumber(vector.begin(), vector.end());
 	}catch (std::exception &exception){

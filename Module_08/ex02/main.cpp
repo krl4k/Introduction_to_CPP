@@ -5,37 +5,66 @@
 #include <iostream>
 #include <stack>
 #include <list>
+#include <queue>
+void test()
+{
+	std::deque<int> deque;
+	deque.push_back(1);
+	deque.push_back(2);
+	deque.push_back(3);
+
+	std::deque<int>::iterator it = --deque.end();
+	std::cout << "stack????????" << std::endl;
+	while (it != --deque.begin())
+	{
+		std::cout << *it << std::endl;
+		--it;
+	}
+//	std::cout << "begin = " << *deque.begin() << std::endl;
+
+//	std::cout << it++ << std::endl;
+}
 
 int main()
 {
+//	test();
+//	return (0);
+
+
+
 	MutantStack<int> mstack;
-	mstack.push(1);
-	mstack.push(3);
-	std::cout << "stack top = "<< mstack.top() << std::endl;
-	mstack.pop();
+	for (int i = 0; i < 5; ++i) {
+		mstack.push(i);
+	}
+	std::cout << "stack top  = "<< mstack.top() << std::endl;
 	std::cout << "stack size = " << mstack.size() << std::endl;
-	mstack.push(2);
-	mstack.push(3);
-	mstack.push(4);
-	mstack.push(5);
-	mstack.push(6);
-//[...]
-//	mstack.push(0);
+	mstack.pop();
+	std::cout << "" << std::endl;
+	std::cout << "stack top  = "<< mstack.top() << std::endl;
+	std::cout << "stack size = " << mstack.size() << std::endl;
+
 	MutantStack<int>::iterator it = mstack.begin();
 	MutantStack<int>::iterator ite = mstack.end();
-	std::cout << *ite << std::endl;
+	std::cout << "begin = "<< *it << std::endl;
+	std::cout << "end = "<< *--mstack.end() << std::endl;
 	++it;
 	--it;
 	std::cout << "stack iteration" << std::endl;
 	while (it != ite)
 	{
-		std::cout << *it << std::endl;
+		std::cout << *it << " ";
 		++it;
 	}
+
+	std::cout << "\nstack reverse iteration" << std::endl;
+	it = --mstack.begin();
+	--ite;
+	while (ite != it){
+		std::cout << *ite << " ";
+		--ite;
+	}
+	std::cout << "" << std::endl;
 	std::stack<int> s(mstack);
-//	std::list<int> list;
-//	std::list<int>::iterator ite = list.begin();
-//	ite--;
 
 	return 0;
 }
